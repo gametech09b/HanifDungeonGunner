@@ -6,6 +6,7 @@ public class RoomNodeGraphEditor : EditorWindow
 {
     private GUIStyle roomNodeStyle;
     private static RoomNodeGraphSO currentRoomNodeGraph;
+    private RoomNodeSO currentRoomNode = null;
     private RoomNodeTypeListSO roomNodeTypeList;
 
     // Node layout values
@@ -14,17 +15,15 @@ public class RoomNodeGraphEditor : EditorWindow
     private const int nodePadding = 25;
     private const int nodeBorder = 12;
 
-     [MenuItem("Room Node Graph Editor", menuItem = "Window/Dungeon Editor/Room Node Graph Editor")]
-     
+
+    [MenuItem("Room Node Graph Editor", menuItem = "Window/Dungeon Editor/Room Node Graph Editor")]
     private static void OpenWindow()
     {
         GetWindow<RoomNodeGraphEditor>("Room Node Graph Editor");
     }
 
-
     private void OnEnable()
     {
-
         // Define node layout style
         roomNodeStyle = new GUIStyle();
         roomNodeStyle.normal.background = EditorGUIUtility.Load("node1") as Texture2D;
@@ -32,12 +31,13 @@ public class RoomNodeGraphEditor : EditorWindow
         roomNodeStyle.padding = new RectOffset(nodePadding, nodePadding, nodePadding, nodePadding);
         roomNodeStyle.border = new RectOffset(nodeBorder, nodeBorder, nodeBorder, nodeBorder);
 
+
         // Load Room node types
         roomNodeTypeList = GameResources.Instance.roomNodeTypeList;
 
     }
 
-     /// <summary>
+    /// <summary>
     /// Open the room node graph editor window if a room node graph scriptable object asset is double clicked in the inspector
     /// </summary>
 
@@ -57,8 +57,13 @@ public class RoomNodeGraphEditor : EditorWindow
         return false;
     }
 
+
+    /// <summary>
+    /// Draw Editor Gui
+    /// </summary>
     private void OnGUI()
     {
+
         // If a scriptable object of type RoomNodeGraphSO has been selected then process
         if (currentRoomNodeGraph != null)
         {
@@ -73,10 +78,44 @@ public class RoomNodeGraphEditor : EditorWindow
             Repaint();
     }
 
-        private void ProcessEvents(Event currentEvent)
+    private void ProcessEvents(Event currentEvent)
+    {
+        // Get room node that mouse is over if it's null or not currently being dragged
+        if (currentRoomNode == null || currentRoomNode.isLeftClickDragging == false)
+        {
+            currentRoomNode = IsMouseOverRoomNode(currentEvent);
+        }
+
+        // if mouse isn't over a room node
+        if (currentRoomNode == null)
         {
             ProcessRoomNodeGraphEvents(currentEvent);
         }
+        // else process room node events
+        else
+        {
+            // process room node events
+            currentRoomNode.ProcessEvents(currentEvent);
+        }
+
+    }
+
+
+    /// <summary>
+    ///  Check to see to mouse is over a room node - if so then return the room node else return null
+    /// </summary>
+    private RoomNodeSO IsMouseOverRoomNode(Event currentEvent)
+    {
+        for (int i = currentRoomNodeGraph.roomNodeList.Count - 1; i >= 0; i--)
+        {
+            if (currentRoomNodeGraph.roomNodeList[i].rect.Contains(currentEvent.mousePosition))
+            {
+                return currentRoomNodeGraph.roomNodeList[i];
+            }
+        }
+
+        return null;
+    }
 
     /// <summary>
     /// Process Room Node Graph Events
@@ -95,7 +134,7 @@ public class RoomNodeGraphEditor : EditorWindow
         }
     }
 
-     /// <summary>
+    /// <summary>
     /// Process mouse down events on the room node graph (not over a node)
     /// </summary>
     private void ProcessMouseDownEvent(Event currentEvent)
@@ -161,6 +200,5 @@ public class RoomNodeGraphEditor : EditorWindow
         }
 
         GUI.changed = true;
-    }
-    
+    }   
 }
