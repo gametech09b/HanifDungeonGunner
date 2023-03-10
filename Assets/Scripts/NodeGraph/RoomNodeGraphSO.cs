@@ -9,6 +9,7 @@ public class RoomNodeGraphSO : ScriptableObject
     [HideInInspector] public List<RoomNodeSO> roomNodeList = new List<RoomNodeSO>();
     [HideInInspector] public Dictionary<string, RoomNodeSO> roomNodeDictionary = new Dictionary<string, RoomNodeSO>();
 
+
     private void Awake()
     {
         LoadRoomNodeDictionary();
