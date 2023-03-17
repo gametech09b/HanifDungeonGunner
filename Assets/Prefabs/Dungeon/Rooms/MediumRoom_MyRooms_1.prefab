@@ -50634,7 +50634,7 @@ GameObject:
   - component: {fileID: 8367915967290079537}
   - component: {fileID: 8367915967290079536}
   m_Layer: 12
-  m_Name: RoomTemplate 1
+  m_Name: MediumRoom_MyRooms_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
