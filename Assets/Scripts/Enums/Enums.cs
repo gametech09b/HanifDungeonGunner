@@ -4,6 +4,21 @@
     east,
     south,
     west,
-    none
+    none    
+}
+
+public enum GameState
+{
+   gameStarted,
+   playingLevel,
+   engagingEnemies,
+   bossStage,
+   engagingBoss,
+   gameWon,
+   gameLost,
+   gamePaused,
+   dungeonOverviewMap,
+   restartGame
+
 }
 
