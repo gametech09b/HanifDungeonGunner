@@ -4953,6 +4953,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8227588318318580144}
   - component: {fileID: 1462120759972737929}
+  - component: {fileID: -5362253100063254824}
   m_Layer: 12
   m_Name: ChestRoom_Sorcery_4
   m_TagString: Untagged
@@ -5003,6 +5004,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 17, y: 22}
   m_EdgeRadius: 0
+--- !u!114 &-5362253100063254824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4327421925113694216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1f080f41d70a6249a396bfe3af4ad3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: {fileID: 0}
+  groundTilemap: {fileID: 0}
+  decoration1Tilemap: {fileID: 0}
+  decoration2Tilemap: {fileID: 0}
+  frontTilemap: {fileID: 0}
+  collisionTilemap: {fileID: 0}
+  minimapTilemap: {fileID: 0}
+  roomColliderBounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
 --- !u!1 &4561116449979205807
 GameObject:
   m_ObjectHideFlags: 0
@@ -5369,7 +5392,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 8
-      m_TileSpriteIndex: 9
+      m_TileSpriteIndex: 100
       m_TileMatrixIndex: 1
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -8890,8 +8913,8 @@ Tilemap:
     m_Data: {fileID: 3778995863347356025, guid: 68f5c5759669b5543aa05fbef7f8dc51, type: 3}
   - m_RefCount: 12
     m_Data: {fileID: 5552490765488037178, guid: 68f5c5759669b5543aa05fbef7f8dc51, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 5989849239773016276, guid: c007780bfab6ffe448253ea96667f373, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: 3202081167477115321, guid: c007780bfab6ffe448253ea96667f373, type: 3}
   - m_RefCount: 8
@@ -9072,8 +9095,8 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 5989849239773016276, guid: c007780bfab6ffe448253ea96667f373, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 359821533675095215, guid: c007780bfab6ffe448253ea96667f373, type: 3}
   - m_RefCount: 1
