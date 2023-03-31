@@ -9,7 +9,47 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2000872370321756933, guid: ab24403798d10734789ab74d68141230, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: TheThief
+      objectReference: {fileID: 0}
+    - target: {fileID: 2354958595050793810, guid: ab24403798d10734789ab74d68141230, type: 3}
+      propertyPath: m_Size.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2354958595050793810, guid: ab24403798d10734789ab74d68141230, type: 3}
+      propertyPath: m_Size.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2354958595050793810, guid: ab24403798d10734789ab74d68141230, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 044475928b1986f4985bcce32aae60fa, type: 3}
+    - target: {fileID: 2354958595050793810, guid: ab24403798d10734789ab74d68141230, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485682664610194211, guid: ab24403798d10734789ab74d68141230, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1294556743, guid: c7f47f6cb235cde4286ecbb65f4166b2, type: 3}
+    - target: {fileID: 5485682664610194211, guid: ab24403798d10734789ab74d68141230, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290774197398374837, guid: ab24403798d10734789ab74d68141230, type: 3}
+      propertyPath: m_Size.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290774197398374837, guid: ab24403798d10734789ab74d68141230, type: 3}
+      propertyPath: m_Size.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290774197398374837, guid: ab24403798d10734789ab74d68141230, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 044475928b1986f4985bcce32aae60fa, type: 3}
+    - target: {fileID: 8290774197398374837, guid: ab24403798d10734789ab74d68141230, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8815352088616128979, guid: ab24403798d10734789ab74d68141230, type: 3}
       propertyPath: m_RootOrder
@@ -55,5 +95,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9145592240754298444, guid: ab24403798d10734789ab74d68141230, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145592240754298444, guid: ab24403798d10734789ab74d68141230, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: fb0cc3b02f662c74f941f11193bb2c27, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab24403798d10734789ab74d68141230, type: 3}
