@@ -28,13 +28,23 @@ public class GameResources : MonoBehaviour
 
     public RoomNodeTypeListSO roomNodeTypeList;
 
+    #region Header PLAYER
+    [Space(10)]
+    [Header("PLAYER")]
+    #endregion Header PLAYER
+    #region Tooltip
+    [Tooltip("The current player scriptable object - this is used to reference the current player between scenes")]
+    #endregion Tooltip
+    public CurrentPlayerSO currentPlayer;
+
+
     #region Header MATERIALS
     [Space(10)]
     [Header("MATERIALS")]
     #endregion
-    
     #region Tooltip
-    [Tooltip("dimmed Material")]
+    [Tooltip("Dimmed Material")]
     #endregion
     public Material dimmedMaterial;
+
 }
