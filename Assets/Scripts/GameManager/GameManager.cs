@@ -27,8 +27,38 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     #endregion Tooltip
 
     [SerializeField] private int currentDungeonLevelListIndex = 0;
+        private Room currentRoom;
+        private Room previousRoom;
+        private PlayerDetailsSO playerDetails;
+        private Player player;
 
     [HideInInspector] public GameState gameState;
+
+    
+    protected override void Awake()
+    {
+        base.Awake();
+        
+        playerDetails = GameResources.Instance.currentPlayer.playerDetails;
+
+        // Instantiate player
+        InstantiatePlayer();
+    }
+
+
+
+    ///Create player in scene at position
+    private void InstantiatePlayer()
+    {
+        // Instantiate player
+        GameObject playerGameObject = Instantiate(playerDetails.playerPrefab);
+
+        // Initialize Player
+        player = playerGameObject.GetComponent<Player>();
+
+        player.Initialize(playerDetails);
+
+    }
 
 
     // Start is called before the first frame update
@@ -71,6 +101,16 @@ public class GameManager : SingletonMonobehaviour<GameManager>
 
     }
 
+    /// Set the current room the player in in
+    public void SetCurrentRoom(Room room)
+    {
+        previousRoom = currentRoom;
+        currentRoom = room;
+
+        //// Debug
+        //Debug.Log(room.prefab.name.ToString());
+    }
+
 
     private void PlayDungeonLevel(int dungeonLevelListIndex)
     {
@@ -81,7 +121,27 @@ public class GameManager : SingletonMonobehaviour<GameManager>
             Debug.LogError("couldn't build dungeon from specified rooms and node graphs "); 
         }
 
+        // Set player roughly mid-room
+        player.gameObject.transform.position = new Vector3((currentRoom.lowerBounds.x + currentRoom.upperBounds.x) / 2f, (currentRoom.lowerBounds.y + currentRoom.upperBounds.y) / 2f, 0f);
+
+
+        // Get nearest spawn point in room nearest to player
+        player.gameObject.transform.position = HelperUtilities.GetSpawnPositionNearestToPlayer(player.gameObject.transform.position);
+
     }
+
+    //Get The Player
+    public Player GetPlayer()
+    {
+        return player;
+    }
+
+     /// Get the current room the player is in
+    public Room GetCurrentRoom()
+    {
+        return currentRoom;
+    }
+    
 
 
     #region Validation
