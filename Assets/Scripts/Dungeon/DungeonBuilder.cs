@@ -12,6 +12,18 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
     private RoomNodeTypeListSO roomNodeTypeList;
     private bool dungeonBuildSuccessful;
 
+    private void OnEnable()
+    {
+        // Set dimmed material to off
+        GameResources.Instance.dimmedMaterial.SetFloat("Alpha_Slider", 0f);
+    }
+
+    private void OnDisable()
+    {
+        // Set dimmed material to fully visible
+        GameResources.Instance.dimmedMaterial.SetFloat("Alpha_Slider", 1f);
+    }
+
     protected override void Awake()
     {
         base.Awake();
@@ -19,9 +31,8 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
         // Load the room node type list
         LoadRoomNodeTypeList();
 
-        // Set dimmed material to fully visible
-        GameResources.Instance.dimmedMaterial.SetFloat("Alpha_Slider", 1f);
     }
+
 
     /// <summary>
     /// Load the room node type list
@@ -529,9 +540,10 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
         {
             room.parentRoomID = "";
             room.isPreviouslyVisited = true;
-            
-            //Set Entrance in Game Manager
+
+            // Set entrance in game manager
             GameManager.Instance.SetCurrentRoom(room);
+
         }
         else
         {
@@ -607,26 +619,27 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
     /// </summary>
     private void InstantiateRoomGameobjects()
     {
+        // Iterate through all dungeon rooms.
         foreach (KeyValuePair<string, Room> keyvaluepair in dungeonBuilderRoomDictionary)
         {
-            Room room  = keyvaluepair.Value;
+            Room room = keyvaluepair.Value;
 
-            Vector3 roomPosition = new Vector3(room.lowerBounds.x - room.templateLowerBounds.x, room.lowerBounds.y- room.templateLowerBounds.y, 0f);
+            // Calculate room position (remember the room instantiatation position needs to be adjusted by the room template lower bounds)
+            Vector3 roomPosition = new Vector3(room.lowerBounds.x - room.templateLowerBounds.x, room.lowerBounds.y - room.templateLowerBounds.y, 0f);
 
+            // Instantiate room
             GameObject roomGameobject = Instantiate(room.prefab, roomPosition, Quaternion.identity, transform);
-            
 
-            InstantiatedRoom instantiatedRoom = roomGameobject.GetComponentInChildren<InstantiatedRoom>(); 
+            // Get instantiated room component from instantiated prefab.
+            InstantiatedRoom instantiatedRoom = roomGameobject.GetComponentInChildren<InstantiatedRoom>();
 
             instantiatedRoom.room = room;
 
+            // Initialise The Instantiated Room
             instantiatedRoom.Initialise(roomGameobject);
 
-
+            // Save gameobject reference.
             room.instantiatedRoom = instantiatedRoom;
-
-
-            
         }
     }
 
