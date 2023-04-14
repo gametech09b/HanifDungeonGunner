@@ -496,7 +496,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3306ecd9f5fa11b40aba968f036de5e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolArray: []
+  poolArray:
+  - poolSize: 30
+    prefab: {fileID: 2527022953459127608, guid: cf64ff5e8055436409402ab3c8de3140, type: 3}
+    componentType: EnemyAnimation
 --- !u!4 &798054585
 Transform:
   m_ObjectHideFlags: 0
@@ -732,9 +735,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.18303572
+    y: 0
     width: 1
-    height: 0.6328125
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
