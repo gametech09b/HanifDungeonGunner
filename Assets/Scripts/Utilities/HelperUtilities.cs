@@ -6,7 +6,9 @@ public static class HelperUtilities
 {
     public static Camera mainCamera;
 
+    /// <summary>
     /// Get the mouse world position.
+    /// </summary>
     public static Vector3 GetMouseWorldPosition()
     {
         if (mainCamera == null) mainCamera = Camera.main;
@@ -25,7 +27,9 @@ public static class HelperUtilities
 
     }
 
+    /// <summary>
     /// Get the angle in degrees from a direction vector
+    /// </summary>
     public static float GetAngleFromVector(Vector3 vector)
     {
         float radians = Mathf.Atan2(vector.y, vector.x);
@@ -35,8 +39,23 @@ public static class HelperUtilities
         return degrees;
 
     }
-    
+
+    /// <summary>
+    /// Get the direction vector from an angle in degrees
+    /// </summary>
+    /// <returns></returns>
+    public static Vector3 GetDirectionVectorFromAngle(float angle)
+    {
+        Vector3 directionVector = new Vector3(Mathf.Cos(Mathf.Deg2Rad * angle), Mathf.Sin(Mathf.Deg2Rad * angle), 0f);
+        return directionVector;
+    }
+
+
+
+
+    /// <summary>
     /// Get AimDirection enum value from the pased in angleDegrees
+    /// </summary>
     public static AimDirection GetAimDirection(float angleDegrees)
     {
         AimDirection aimDirection;
@@ -80,6 +99,7 @@ public static class HelperUtilities
         return aimDirection;
 
     }
+
 
     /// <summary>
     /// Empty string debug check
@@ -174,7 +194,9 @@ public static class HelperUtilities
         return error;
     }
 
+    /// <summary>
     /// positive value debug check - if zero is allowed set isZeroAllowed to true. Returns true if there is an error
+    /// </summary>
     public static bool ValidateCheckPositiveValue(Object thisObject, string fieldName, float valueToCheck, bool isZeroAllowed)
     {
         bool error = false;
@@ -199,8 +221,9 @@ public static class HelperUtilities
         return error;
     }
 
+    /// <summary>
     /// positive range debug check - set isZeroAllowed to true if the min and max range values can both be zero. Returns true if there is an error
-    
+    /// </summary>
     public static bool ValidateCheckPositiveRange(Object thisObject, string fieldNameMinimum, float valueToCheckMinimum, string fieldNameMaximum, float valueToCheckMaximum, bool isZeroAllowed)
     {
         bool error = false;
@@ -215,18 +238,20 @@ public static class HelperUtilities
         if (ValidateCheckPositiveValue(thisObject, fieldNameMaximum, valueToCheckMaximum, isZeroAllowed)) error = true;
 
         return error;
-    } 
+    }
 
-
-
+    /// <summary>
     /// Get the nearest spawn position to the player
+    /// </summary>
     public static Vector3 GetSpawnPositionNearestToPlayer(Vector3 playerPosition)
     {
         Room currentRoom = GameManager.Instance.GetCurrentRoom();
+
         Grid grid = currentRoom.instantiatedRoom.grid;
+
         Vector3 nearestSpawnPosition = new Vector3(10000f, 10000f, 0f);
 
-         // Loop through room spawn positions
+        // Loop through room spawn positions
         foreach (Vector2Int spawnPositionGrid in currentRoom.spawnPositionArray)
         {
             // convert the spawn grid positions to world positions
@@ -239,6 +264,7 @@ public static class HelperUtilities
         }
 
         return nearestSpawnPosition;
+
     }
 
 }

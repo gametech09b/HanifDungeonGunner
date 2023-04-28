@@ -498,8 +498,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolArray:
   - poolSize: 30
-    prefab: {fileID: 2527022953459127608, guid: cf64ff5e8055436409402ab3c8de3140, type: 3}
-    componentType: EnemyAnimation
+    prefab: {fileID: 5502872187975516944, guid: 233a0341b80433143ad78e519ee0ace1, type: 3}
+    componentType: IFireable
 --- !u!4 &798054585
 Transform:
   m_ObjectHideFlags: 0
