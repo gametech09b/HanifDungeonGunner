@@ -63,6 +63,9 @@ GameObject:
   - component: {fileID: 2239582680731247951}
   - component: {fileID: 3161588123656510560}
   - component: {fileID: 8631189718735324922}
+  - component: {fileID: 2301248154738014071}
+  - component: {fileID: 7935537000900364417}
+  - component: {fileID: 3241058421444918472}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -300,6 +303,8 @@ MonoBehaviour:
   setActiveWeaponEvent: {fileID: 0}
   activeWeapon: {fileID: 0}
   weaponFiredEvent: {fileID: 0}
+  reloadWeaponEvent: {fileID: 0}
+  weaponReloadedEvent: {fileID: 0}
   spriteRenderer: {fileID: 0}
   animator: {fileID: 0}
 --- !u!114 &1159805381228570442
@@ -486,6 +491,42 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a5a88355e3c07a42bf7959fdee36360, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2301248154738014071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000872370321756933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4703e77c4572f3409ac35e956d7029e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7935537000900364417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000872370321756933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b7288a5c22a9c2448dceaec2ddb8051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3241058421444918472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000872370321756933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9b1371522a3bb47b359f42ff7398f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3531357099694943029
