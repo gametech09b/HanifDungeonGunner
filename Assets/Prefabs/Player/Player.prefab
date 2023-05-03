@@ -60,6 +60,9 @@ GameObject:
   - component: {fileID: 1717649065457688929}
   - component: {fileID: -1507129127052237550}
   - component: {fileID: 750682017739005597}
+  - component: {fileID: 2239582680731247951}
+  - component: {fileID: 3161588123656510560}
+  - component: {fileID: 8631189718735324922}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -293,8 +296,10 @@ MonoBehaviour:
   movementToPositionEvent: {fileID: 0}
   idleEvent: {fileID: 0}
   aimWeaponEvent: {fileID: 0}
+  fireWeaponEvent: {fileID: 0}
   setActiveWeaponEvent: {fileID: 0}
   activeWeapon: {fileID: 0}
+  weaponFiredEvent: {fileID: 0}
   spriteRenderer: {fileID: 0}
   animator: {fileID: 0}
 --- !u!114 &1159805381228570442
@@ -447,6 +452,42 @@ MonoBehaviour:
   weaponPolygonCollider2D: {fileID: 611997573073940319}
   weaponShootPositionTransform: {fileID: 3505542618845042381}
   weaponEffectPositionTransform: {fileID: 4471278943813821360}
+--- !u!114 &2239582680731247951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000872370321756933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7852f6310654f947a17519a19e5e21a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3161588123656510560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000872370321756933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ba9b23412868424380c9d8c1af91ceb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8631189718735324922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000872370321756933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a5a88355e3c07a42bf7959fdee36360, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3531357099694943029
 GameObject:
   m_ObjectHideFlags: 0
