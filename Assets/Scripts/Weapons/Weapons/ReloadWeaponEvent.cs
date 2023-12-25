@@ -7,7 +7,7 @@ using UnityEngine;
 public class ReloadWeaponEvent : MonoBehaviour
 {
     public event Action<ReloadWeaponEvent, ReloadWeaponEventArgs> OnReloadWeapon;
-    
+
     /// <summary>
     /// Specify the weapon to have it's clip reloaded.  If the total ammo is also to be increased then specify the topUpAmmoPercent.
     /// </summary>

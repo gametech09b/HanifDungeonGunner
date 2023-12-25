@@ -9,13 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09dd4645abaca7f48aebebae15b03c8b, type: 3}
+  m_Script: {fileID: 11500000, guid: 64a00a35ce5bbe34da0995589e385360, type: 3}
   m_Name: WeaponDetails_Revolver
   m_EditorClassIdentifier: 
   weaponName: Revolver
   weaponSprite: {fileID: 21300000, guid: 29bc0107bc11191468ed7d175994fb5b, type: 3}
   weaponShootPosition: {x: 1.15, y: 0.329, z: 0}
-  weaponCurrentAmmo: {fileID: 11400000, guid: 199e008c810c26247827a1821075b3e3, type: 2}
+  weaponCurrentAmmo: {fileID: 11400000, guid: c8da3159e19356c4581c72b618cedbb4, type: 2}
+  weaponShootEffect: {fileID: 11400000, guid: f9af518fe5abe3c478d515b898721256, type: 2}
+  weaponFiringSoundEffect: {fileID: 11400000, guid: 17f0f60f753a9ce4ea1168e20bcdd235, type: 2}
+  weaponReloadingSoundEffect: {fileID: 11400000, guid: 705043b191b35b44d824c73e67d32898, type: 2}
   hasInfiniteAmmo: 0
   hasInfiniteClipCapacity: 0
   weaponClipAmmoCapacity: 6

@@ -1,7 +1,25 @@
 fileFormatVersion: 2
-guid: 1b137b505eee7fe44acc8f47092f111a
+guid: 922ac2027c6235d4ea2af4598c47c35e
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 4443779990112192970
+    second: TheThiefMoveDown_0
+  - first:
+      213: 1909416500081989202
+    second: TheThiefMoveDown_1
+  - first:
+      213: -3703170292887216084
+    second: TheThiefMoveDown_2
+  - first:
+      213: -3669123802222641072
+    second: TheThiefMoveDown_3
+  - first:
+      213: 8673360299835645538
+    second: TheThiefMoveDown_4
+  - first:
+      213: -8863045275302073947
+    second: TheThiefMoveDown_5
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -63,7 +81,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -82,7 +100,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -94,7 +112,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,7 +124,31 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -131,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 992dea2521b12d44c8d98c88c10567ad
-      internalID: 1959461543
+      spriteID: ac940aa5b5a7bad30800000000000000
+      internalID: 4443779990112192970
       vertices: []
       indices: 
       edges: []
@@ -152,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a834e5f7279d964f87047e778e55384
-      internalID: -690606812
+      spriteID: 25618a7b03c9f7a10800000000000000
+      internalID: 1909416500081989202
       vertices: []
       indices: 
       edges: []
@@ -173,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d64b13962e5b6547af981192908ae9f
-      internalID: -1003472156
+      spriteID: c20ada52d32bb9cc0800000000000000
+      internalID: -3703170292887216084
       vertices: []
       indices: 
       edges: []
@@ -194,8 +236,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f21e1ce7f46f094d96498d9b4d98ab3
-      internalID: 698113746
+      spriteID: 050c69b7757a41dc0800000000000000
+      internalID: -3669123802222641072
       vertices: []
       indices: 
       edges: []
@@ -215,8 +257,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 189b297555fb63844a56b0abc6cfb87b
-      internalID: -233636800
+      spriteID: 26edda04d37fd5870800000000000000
+      internalID: 8673360299835645538
       vertices: []
       indices: 
       edges: []
@@ -236,8 +278,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1620f3f94c792ab45a74a76df2b44e0a
-      internalID: -1336453665
+      spriteID: 5a96a61d743200580800000000000000
+      internalID: -8863045275302073947
       vertices: []
       indices: 
       edges: []
@@ -253,12 +295,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TheThiefMoveDown_3: 698113746
-      TheThiefMoveDown_4: -233636800
-      TheThiefMoveDown_0: 1959461543
-      TheThiefMoveDown_5: -1336453665
-      TheThiefMoveDown_1: -690606812
-      TheThiefMoveDown_2: -1003472156
+      TheThiefMoveDown_3: -3669123802222641072
+      TheThiefMoveDown_4: 8673360299835645538
+      TheThiefMoveDown_0: 4443779990112192970
+      TheThiefMoveDown_5: -8863045275302073947
+      TheThiefMoveDown_1: 1909416500081989202
+      TheThiefMoveDown_2: -3703170292887216084
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -9,30 +9,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fc17fac7c88a73418cea6362fa0477d, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b4954adab2da614ca52023de4ebf134, type: 3}
   m_Name: AmmoDetails_PlasmaBlaster
   m_EditorClassIdentifier: 
-  ammoName: Pistol Ammo
+  ammoName: Plasma Blaster Ammo
   isPlayerAmmo: 1
   ammoSprite: {fileID: 21300000, guid: 4df9cc7131cd27f4288bca5e76c82034, type: 3}
   ammoPrefabArray:
-  - {fileID: 5502872187975516944, guid: 233a0341b80433143ad78e519ee0ace1, type: 3}
-  ammoMaterial: {fileID: 2100000, guid: 5c86445c1f630c141ab88b05539eca5d, type: 2}
+  - {fileID: 3704831762367981905, guid: 81751cb48351f4e4b8ce62c264add7f8, type: 3}
+  ammoMaterial: {fileID: 2100000, guid: c64696a09f1cb1a4d9766d1fe9778ca5, type: 2}
   ammoChargeTime: 0
   ammoChargeMaterial: {fileID: 0}
-  ammoDamage: 6
-  ammoSpeedMin: 15
-  ammoSpeedMax: 15
-  ammoRange: 12
+  ammoHitEffect: {fileID: 11400000, guid: 4e84ec8b5684c6b42a87d651f1936b74, type: 2}
+  ammoDamage: 5
+  ammoSpeedMin: 50
+  ammoSpeedMax: 50
+  ammoRange: 14
   ammoRotationSpeed: 1
-  ammoSpreadMin: 2
-  ammoSpreadMax: 4
+  ammoSpreadMin: 0.5
+  ammoSpreadMax: 1
   ammoSpawnAmountMin: 1
   ammoSpawnAmountMax: 1
   ammoSpawnIntervalMin: 0
   ammoSpawnIntervalMax: 0
-  isAmmoTrail: 0
-  ammoTrailTime: 0
-  ammoTrailMaterial: {fileID: 0}
-  ammoTrailStartWidth: 0
-  ammoTrailEndWidth: 0
+  isAmmoTrail: 1
+  ammoTrailTime: 0.07
+  ammoTrailMaterial: {fileID: 2100000, guid: f40d05d451e2ae24f91e9e3314c280da, type: 2}
+  ammoTrailStartWidth: 0.079
+  ammoTrailEndWidth: 0.15

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEditor;
+using UnityEngine;
 
 public class RoomNodeSO : ScriptableObject
 {
@@ -36,7 +36,6 @@ public class RoomNodeSO : ScriptableObject
         roomNodeTypeList = GameResources.Instance.roomNodeTypeList;
     }
 
-
     /// <summary>
     /// Draw node with the nodestyle
     /// </summary>
@@ -62,6 +61,7 @@ public class RoomNodeSO : ScriptableObject
             int selection = EditorGUILayout.Popup("", selected, GetRoomNodeTypesToDisplay());
 
             roomNodeType = roomNodeTypeList.list[selection];
+
             // If the room type selection has changed making child connections potentially invalid
             if (roomNodeTypeList.list[selected].isCorridor && !roomNodeTypeList.list[selection].isCorridor || !roomNodeTypeList.list[selected].isCorridor && roomNodeTypeList.list[selection].isCorridor || !roomNodeTypeList.list[selected].isBossRoom && roomNodeTypeList.list[selection].isBossRoom)
             {
@@ -85,8 +85,6 @@ public class RoomNodeSO : ScriptableObject
                     }
                 }
             }
-
-
         }
 
         if (EditorGUI.EndChangeCheck())
@@ -182,7 +180,6 @@ public class RoomNodeSO : ScriptableObject
         roomNodeGraph.SetNodeToDrawConnectionLineFrom(this, currentEvent.mousePosition);
     }
 
-
     /// <summary>
     /// Process mouse up event
     /// </summary>
@@ -218,7 +215,6 @@ public class RoomNodeSO : ScriptableObject
         }
     }
 
-
     /// <summary>
     /// Process left mouse drag event
     /// </summary>
@@ -242,7 +238,7 @@ public class RoomNodeSO : ScriptableObject
     /// <summary>
     /// Add childID to the node (returns true if the node has been added, false otherwise)
     /// </summary>
-   public bool AddChildRoomNodeIDToRoomNode(string childID)
+    public bool AddChildRoomNodeIDToRoomNode(string childID)
     {
         // Check child node can be added validly to parent
         if (IsChildRoomValid(childID))
@@ -254,7 +250,7 @@ public class RoomNodeSO : ScriptableObject
         return false;
     }
 
-     /// <summary>
+    /// <summary>
     /// Check the child node can be validly added to the parent node - return true if it can otherwise return false
     /// </summary>
     public bool IsChildRoomValid(string childID)
@@ -312,9 +308,7 @@ public class RoomNodeSO : ScriptableObject
             return false;
 
         return true;
-
     }
-
 
     /// <summary>
     /// Add parentID to the node (returns true if the node has been added, false otherwise)
@@ -330,7 +324,7 @@ public class RoomNodeSO : ScriptableObject
     /// </summary>
     public bool RemoveChildRoomNodeIDFromRoomNode(string childID)
     {
-        // if the node contains the child TD then remove it
+        // if the node contains the child ID then remove it
         if (childRoomNodeIDList.Contains(childID))
         {
             childRoomNodeIDList.Remove(childID);
@@ -342,7 +336,6 @@ public class RoomNodeSO : ScriptableObject
     /// <summary>
     /// Remove parentID from the node (returns true if the node has been remove, false otherwise)
     /// </summary>
-
     public bool RemoveParentRoomNodeIDFromRoomNode(string parentID)
     {
         // if the node contains the parent ID then remove it

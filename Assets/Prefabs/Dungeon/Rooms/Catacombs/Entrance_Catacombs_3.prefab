@@ -27,7 +27,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8593471679417779538}
   - {fileID: 1075347024435369538}
@@ -78,7 +77,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7469220508704879338}
   m_RootOrder: 1
@@ -2140,7 +2138,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7469220508704879338}
   m_RootOrder: 5
@@ -7408,7 +7405,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7469220508704879338}
   m_RootOrder: 3
@@ -8160,7 +8156,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7469220508704879338}
   m_RootOrder: 2
@@ -8890,7 +8885,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3054645827938798965}
   m_RootOrder: 1
@@ -8905,8 +8899,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3054645827938798965}
   - component: {fileID: 5476505636122767180}
-  - component: {fileID: -4785183872212113674}
-  - component: {fileID: -8144031661347923470}
+  - component: {fileID: -6596250179167278396}
+  - component: {fileID: -3035274335926796666}
   m_Layer: 12
   m_Name: Entrance_Catacombs_3
   m_TagString: Untagged
@@ -8924,7 +8918,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7469220508704879338}
   - {fileID: 2213096327042767384}
@@ -8957,7 +8950,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 22, y: 23}
   m_EdgeRadius: 0
---- !u!114 &-4785183872212113674
+--- !u!114 &-6596250179167278396
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8966,7 +8959,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7224931148630070477}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1f080f41d70a6249a396bfe3af4ad3a, type: 3}
+  m_Script: {fileID: 11500000, guid: e6dbde3e998f1d049be1d57d8f539e67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 0}
@@ -8979,7 +8972,7 @@ MonoBehaviour:
   roomColliderBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
---- !u!114 &-8144031661347923470
+--- !u!114 &-3035274335926796666
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8988,7 +8981,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7224931148630070477}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 254a84335c200464c8b3661c79e34e98, type: 3}
+  m_Script: {fileID: 11500000, guid: eee43d1cce0924c49848f833da77970f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7423723252957058154
@@ -9019,7 +9012,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7469220508704879338}
   m_RootOrder: 0
@@ -15324,7 +15316,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7469220508704879338}
   m_RootOrder: 4

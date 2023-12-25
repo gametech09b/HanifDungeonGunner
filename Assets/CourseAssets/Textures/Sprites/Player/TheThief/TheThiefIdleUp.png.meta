@@ -1,7 +1,22 @@
 fileFormatVersion: 2
-guid: 56f631250f8b32346bb5f85c3ebad6d3
+guid: f69ae8fcef0d005419a792105627edb9
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 8662438800511677171
+    second: TheThiefIdleUp_0
+  - first:
+      213: 7116313108137537803
+    second: TheThiefIdleUp_1
+  - first:
+      213: -84599482387033927
+    second: TheThiefIdleUp_2
+  - first:
+      213: 669964238356502705
+    second: TheThiefIdleUp_3
+  - first:
+      213: -858927722398321719
+    second: TheThiefIdleUp_4
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -63,7 +78,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -82,7 +97,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -94,7 +109,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,7 +121,31 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -131,8 +170,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85453361595f3164e8161b03d9ce192e
-      internalID: -26519738
+      spriteID: 3f23f09813a273870800000000000000
+      internalID: 8662438800511677171
       vertices: []
       indices: 
       edges: []
@@ -152,8 +191,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2814a7f0e8f002d41848325ad135fea7
-      internalID: -346784420
+      spriteID: b017ef8611932c260800000000000000
+      internalID: 7116313108137537803
       vertices: []
       indices: 
       edges: []
@@ -173,8 +212,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 649dc5b054ebea048b5b348f9e71adce
-      internalID: 291583842
+      spriteID: 9b09320183173def0800000000000000
+      internalID: -84599482387033927
       vertices: []
       indices: 
       edges: []
@@ -194,8 +233,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 820d3016231f91044b59e0c5dbb7ba8c
-      internalID: -462239181
+      spriteID: 1b85477dce03c4900800000000000000
+      internalID: 669964238356502705
       vertices: []
       indices: 
       edges: []
@@ -215,8 +254,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05079356bf47f5b419a801c2ee9f8cd8
-      internalID: 81126920
+      spriteID: 9c376ba89c97414f0800000000000000
+      internalID: -858927722398321719
       vertices: []
       indices: 
       edges: []
@@ -232,11 +271,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TheThiefIdleUp_3: -462239181
-      TheThiefIdleUp_4: 81126920
-      TheThiefIdleUp_2: 291583842
-      TheThiefIdleUp_1: -346784420
-      TheThiefIdleUp_0: -26519738
+      TheThiefIdleUp_3: 669964238356502705
+      TheThiefIdleUp_4: -858927722398321719
+      TheThiefIdleUp_2: -84599482387033927
+      TheThiefIdleUp_1: 7116313108137537803
+      TheThiefIdleUp_0: 8662438800511677171
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

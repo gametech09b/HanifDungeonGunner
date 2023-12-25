@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3106483161287870352}
   - component: {fileID: 221298215395509921}
-  - component: {fileID: 843545219321356812}
+  - component: {fileID: 1723598980002063619}
   m_Layer: 12
   m_Name: DoorLightingControl
   m_TagString: Untagged
@@ -28,7 +28,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 540364048065662597}
   m_RootOrder: 0
@@ -59,7 +58,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 9}
   m_EdgeRadius: 0
---- !u!114 &843545219321356812
+--- !u!114 &1723598980002063619
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -68,7 +67,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1283670324062226019}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0b0f5e43e021e140950f9faf929834c, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e646bd033fec4144b82efc9de8ff39f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2738513325019869880
@@ -98,7 +97,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3106483161287870352}
   m_Father: {fileID: 1048363501138700790}
@@ -142,7 +140,7 @@ GameObject:
   - component: {fileID: 5146611659337132709}
   - component: {fileID: 7146316663956651662}
   - component: {fileID: 639918786224491004}
-  - component: {fileID: 6826175040047556640}
+  - component: {fileID: 8489632415277195573}
   m_Layer: 13
   m_Name: DoorNS
   m_TagString: Untagged
@@ -160,7 +158,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 540364048065662597}
   m_Father: {fileID: 0}
@@ -220,7 +217,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 1
 --- !u!95 &7146316663956651662
 Animator:
-  serializedVersion: 4
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -233,7 +230,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -264,7 +260,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6826175040047556640
+--- !u!114 &8489632415277195573
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -273,7 +269,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6927665885970513103}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b706ce9a42c24c64096fbb52e1135fcc, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e90563a5e176db46ad39b3c28f079d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   doorCollider: {fileID: 1843479092442461466}

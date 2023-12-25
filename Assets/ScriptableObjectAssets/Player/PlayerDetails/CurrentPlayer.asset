@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09de7930b88eba249be4be693e31ee0c, type: 3}
+  m_Script: {fileID: 11500000, guid: e10263f3daca205429a448fb1236cdcf, type: 3}
   m_Name: CurrentPlayer
   m_EditorClassIdentifier: 
-  playerDetails: {fileID: 11400000, guid: b6ef956d1be38b84ebe81a0dcd890125, type: 2}
-  playerName: 
+  playerDetails: {fileID: 11400000, guid: 49f4d94b8bc08db42b564667f5d40218, type: 2}
+  playerName: Kentang

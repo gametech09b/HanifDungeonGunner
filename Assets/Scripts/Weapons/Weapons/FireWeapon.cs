@@ -5,7 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(FireWeaponEvent))]
 [RequireComponent(typeof(ReloadWeaponEvent))]
 [RequireComponent(typeof(WeaponFiredEvent))]
-
 [DisallowMultipleComponent]
 public class FireWeapon : MonoBehaviour
 {
@@ -42,7 +41,6 @@ public class FireWeapon : MonoBehaviour
         // Decrease cooldown timer.
         fireRateCoolDownTimer -= Time.deltaTime;
     }
-
 
     /// <summary>
     /// Handle fire weapon event.
@@ -119,10 +117,8 @@ public class FireWeapon : MonoBehaviour
             return false;
         }
 
-
         // weapon is ready to fire - return true
         return true;
-
     }
 
     /// <summary>
@@ -134,6 +130,38 @@ public class FireWeapon : MonoBehaviour
 
         if (currentAmmo != null)
         {
+            // Fire ammo routine.
+            StartCoroutine(FireAmmoRoutine(currentAmmo, aimAngle, weaponAimAngle, weaponAimDirectionVector));
+        }
+    }
+
+    /// <summary>
+    /// Coroutine to spawn multiple ammo per shot if specified in the ammo details
+    /// </summary>
+    private IEnumerator FireAmmoRoutine(AmmoDetailsSO currentAmmo, float aimAngle, float weaponAimAngle, Vector3 weaponAimDirectionVector)
+    {
+        int ammoCounter = 0;
+
+        // Get random ammo per shot
+        int ammoPerShot = Random.Range(currentAmmo.ammoSpawnAmountMin, currentAmmo.ammoSpawnAmountMax + 1);
+
+        // Get random interval between ammo
+        float ammoSpawnInterval;
+
+        if (ammoPerShot > 1)
+        {
+            ammoSpawnInterval = Random.Range(currentAmmo.ammoSpawnIntervalMin, currentAmmo.ammoSpawnIntervalMax);
+        }
+        else
+        {
+            ammoSpawnInterval = 0f;
+        }
+
+        // Loop for number of ammo per shot
+        while (ammoCounter < ammoPerShot)
+        {
+            ammoCounter++;
+
             // Get ammo prefab from array
             GameObject ammoPrefab = currentAmmo.ammoPrefabArray[Random.Range(0, currentAmmo.ammoPrefabArray.Length)];
 
@@ -146,17 +174,25 @@ public class FireWeapon : MonoBehaviour
             // Initialise Ammo
             ammo.InitialiseAmmo(currentAmmo, aimAngle, weaponAimAngle, ammoSpeed, weaponAimDirectionVector);
 
-            // Reduce ammo clip count if not infinite clip capacity
-            if (!activeWeapon.GetCurrentWeapon().weaponDetails.hasInfiniteClipCapacity)
-            {
-                activeWeapon.GetCurrentWeapon().weaponClipRemainingAmmo--;
-                activeWeapon.GetCurrentWeapon().weaponRemainingAmmo--;
-            }
-
-            // Call weapon fired event
-            weaponFiredEvent.CallWeaponFiredEvent(activeWeapon.GetCurrentWeapon());
-
+            // Wait for ammo per shot timegap
+            yield return new WaitForSeconds(ammoSpawnInterval);
         }
+
+        // Reduce ammo clip count if not infinite clip capacity
+        if (!activeWeapon.GetCurrentWeapon().weaponDetails.hasInfiniteClipCapacity)
+        {
+            activeWeapon.GetCurrentWeapon().weaponClipRemainingAmmo--;
+            activeWeapon.GetCurrentWeapon().weaponRemainingAmmo--;
+        }
+
+        // Call weapon fired event
+        weaponFiredEvent.CallWeaponFiredEvent(activeWeapon.GetCurrentWeapon());
+
+        // Display weapon shoot effect
+        WeaponShootEffect(aimAngle);
+
+        // Weapon fired sound effect
+        WeaponSoundEffect();
     }
 
     /// <summary>
@@ -175,5 +211,37 @@ public class FireWeapon : MonoBehaviour
     {
         // Reset precharge timer
         firePreChargeTimer = activeWeapon.GetCurrentWeapon().weaponDetails.weaponPrechargeTime;
+    }
+
+
+    /// <summary>
+    /// Display the weapon shoot effect
+    /// </summary>
+    private void WeaponShootEffect(float aimAngle)
+    {
+        // Process if there is a shoot effect & prefab
+        if (activeWeapon.GetCurrentWeapon().weaponDetails.weaponShootEffect != null && activeWeapon.GetCurrentWeapon().weaponDetails.weaponShootEffect.weaponShootEffectPrefab != null)
+        {
+            // Get weapon shoot effect gameobject from the pool with particle system component
+            WeaponShootEffect weaponShootEffect = (WeaponShootEffect)PoolManager.Instance.ReuseComponent(activeWeapon.GetCurrentWeapon().weaponDetails.weaponShootEffect.weaponShootEffectPrefab, activeWeapon.GetShootEffectPosition(), Quaternion.identity);
+
+            // Set shoot effect
+            weaponShootEffect.SetShootEffect(activeWeapon.GetCurrentWeapon().weaponDetails.weaponShootEffect, aimAngle);
+
+            // Set gameobject active (the particle system is set to automatically disable the
+            // gameobject once finished)
+            weaponShootEffect.gameObject.SetActive(true);
+        }
+    }
+
+    /// <summary>
+    /// Play weapon shooting sound effect
+    /// </summary>
+    private void WeaponSoundEffect()
+    {
+        if (activeWeapon.GetCurrentWeapon().weaponDetails.weaponFiringSoundEffect != null)
+        {
+            SoundEffectManager.Instance.PlaySoundEffect(activeWeapon.GetCurrentWeapon().weaponDetails.weaponFiringSoundEffect);
+        }
     }
 }

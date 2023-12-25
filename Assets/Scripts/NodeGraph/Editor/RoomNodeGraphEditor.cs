@@ -17,6 +17,7 @@ public class RoomNodeGraphEditor : EditorWindow
 
     // Node layout values
     private const float nodeWidth = 160f;
+
     private const float nodeHeight = 75f;
     private const int nodePadding = 25;
     private const int nodeBorder = 12;
@@ -267,7 +268,7 @@ public class RoomNodeGraphEditor : EditorWindow
             CreateRoomNode(new Vector2(200f, 200f), roomNodeTypeList.list.Find(x => x.isEntrance));
         }
 
-        CreateRoomNode(mousePositionObject, roomNodeTypeList.list.Find(x => x.isCorridor));
+        CreateRoomNode(mousePositionObject, roomNodeTypeList.list.Find(x => x.isNone));
     }
 
     /// <summary>

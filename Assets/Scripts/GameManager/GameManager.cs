@@ -1,4 +1,4 @@
-    using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,27 +27,31 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     #endregion Tooltip
 
     [SerializeField] private int currentDungeonLevelListIndex = 0;
-        private Room currentRoom;
-        private Room previousRoom;
-        private PlayerDetailsSO playerDetails;
-        private Player player;
+    private Room currentRoom;
+    private Room previousRoom;
+    private PlayerDetailsSO playerDetails;
+    private Player player;
 
     [HideInInspector] public GameState gameState;
+    [HideInInspector] public GameState previousGameState;
+    private long gameScore;
 
-    
     protected override void Awake()
     {
+        // Call base class
         base.Awake();
-        
+
+        // Set player details - saved in current player scriptable object from the main menu
         playerDetails = GameResources.Instance.currentPlayer.playerDetails;
 
         // Instantiate player
         InstantiatePlayer();
+
     }
 
-
-
-    ///Create player in scene at position
+    /// <summary>
+    /// Create player in scene at position
+    /// </summary>
     private void InstantiatePlayer()
     {
         // Instantiate player
@@ -62,24 +66,51 @@ public class GameManager : SingletonMonobehaviour<GameManager>
 
     private void OnEnable()
     {
+        // Subscribe to room changed event.
         StaticEventHandler.OnRoomChanged += StaticEventHandler_OnRoomChanged;
+
+        // Subscribe to the points scored event
+        StaticEventHandler.OnPointsScored += StaticEventHandler_OnPointsScored;
     }
 
     private void OnDisable()
     {
+        // Unsubscribe from room changed event
         StaticEventHandler.OnRoomChanged -= StaticEventHandler_OnRoomChanged;
+
+        // Unsubscribe from the points scored event
+        StaticEventHandler.OnPointsScored -= StaticEventHandler_OnPointsScored;
+
     }
 
+    /// <summary>
+    /// Handle room changed event
+    /// </summary>
     private void StaticEventHandler_OnRoomChanged(RoomChangedEventArgs roomChangedEventArgs)
     {
         SetCurrentRoom(roomChangedEventArgs.room);
     }
 
+    /// <summary>
+    /// Handle points scored event
+    /// </summary>
+    private void StaticEventHandler_OnPointsScored(PointsScoredArgs pointsScoredArgs)
+    {
+        // Increase score
+        gameScore += pointsScoredArgs.points;
+
+        // Call score changed event
+        StaticEventHandler.CallScoreChangedEvent(gameScore);
+    }
 
     // Start is called before the first frame update
     private void Start()
     {
+        previousGameState = GameState.gameStarted;
         gameState = GameState.gameStarted;
+
+        // Set score to zero
+        gameScore = 0;
     }
 
     // Update is called once per frame
@@ -87,11 +118,11 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     {
         HandleGameState();
 
-        // For testing
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            gameState = GameState.gameStarted;
-        }
+        //// For testing
+        //if (Input.GetKeyDown(KeyCode.P))
+        //{
+        //    gameState = GameState.gameStarted;
+        //}
 
     }
 
@@ -116,7 +147,9 @@ public class GameManager : SingletonMonobehaviour<GameManager>
 
     }
 
+    /// <summary>
     /// Set the current room the player in in
+    /// </summary>
     public void SetCurrentRoom(Room room)
     {
         previousRoom = currentRoom;
@@ -129,37 +162,60 @@ public class GameManager : SingletonMonobehaviour<GameManager>
 
     private void PlayDungeonLevel(int dungeonLevelListIndex)
     {
-        bool dungeonBuildSuccessful = DungeonBuilder.Instance.GenerateDungeon(dungeonLevelList[dungeonLevelListIndex]);
+        // Build dungeon for level
+        bool dungeonBuiltSucessfully = DungeonBuilder.Instance.GenerateDungeon(dungeonLevelList[dungeonLevelListIndex]);
 
-        if (!dungeonBuildSuccessful)
+        if (!dungeonBuiltSucessfully)
         {
-            Debug.LogError("couldn't build dungeon from specified rooms and node graphs "); 
+            Debug.LogError("Couldn't build dungeon from specified rooms and node graphs");
         }
 
-        //call static event that room has changed   
+        // Call static event that room has changed.
         StaticEventHandler.CallRoomChangedEvent(currentRoom);
 
         // Set player roughly mid-room
         player.gameObject.transform.position = new Vector3((currentRoom.lowerBounds.x + currentRoom.upperBounds.x) / 2f, (currentRoom.lowerBounds.y + currentRoom.upperBounds.y) / 2f, 0f);
 
-
         // Get nearest spawn point in room nearest to player
         player.gameObject.transform.position = HelperUtilities.GetSpawnPositionNearestToPlayer(player.gameObject.transform.position);
 
+
     }
 
-    //Get The Player
+
+    /// <summary>
+    /// Get the player
+    /// </summary>
     public Player GetPlayer()
     {
         return player;
     }
 
-     /// Get the current room the player is in
+
+    /// <summary>
+    /// Get the player minimap icon
+    /// </summary>
+    public Sprite GetPlayerMiniMapIcon()
+    {
+        return playerDetails.playerMiniMapIcon;
+    }
+
+
+    /// <summary>
+    /// Get the current room the player is in
+    /// </summary>
     public Room GetCurrentRoom()
     {
         return currentRoom;
     }
-    
+
+    /// <summary>
+    /// Get the current dungeon level
+    /// </summary>
+    public DungeonLevelSO GetCurrentDungeonLevel()
+    {
+        return dungeonLevelList[currentDungeonLevelListIndex];
+    }
 
 
     #region Validation

@@ -13,7 +13,7 @@ public class AnimatePlayer : MonoBehaviour
         // Load components
         player = GetComponent<Player>();
     }
-    
+
     private void OnEnable()
     {
         // Subscribe to movement by velocity event

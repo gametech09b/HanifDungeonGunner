@@ -4,7 +4,7 @@
     east,
     south,
     west,
-    none    
+    none
 }
 
 public enum AimDirection
@@ -19,16 +19,15 @@ public enum AimDirection
 
 public enum GameState
 {
-   gameStarted,
-   playingLevel,
-   engagingEnemies,
-   bossStage,
-   engagingBoss,
-   gameWon,
-   gameLost,
-   gamePaused,
-   dungeonOverviewMap,
-   restartGame
-
+    gameStarted,
+    playingLevel,
+    engagingEnemies,
+    bossStage,
+    engagingBoss,
+    levelCompleted,
+    gameWon,
+    gameLost,
+    gamePaused,
+    dungeonOverviewMap,
+    restartGame
 }
-

@@ -32,13 +32,17 @@ public class AimWeapon : MonoBehaviour
         aimWeaponEvent.OnWeaponAim -= AimWeaponEvent_OnWeaponAim;
     }
 
+    /// <summary>
     /// Aim weapon event handler
+    /// </summary>
     private void AimWeaponEvent_OnWeaponAim(AimWeaponEvent aimWeaponEvent, AimWeaponEventArgs aimWeaponEventArgs)
     {
         Aim(aimWeaponEventArgs.aimDirection, aimWeaponEventArgs.aimAngle);
     }
 
+    /// <summary>
     /// Aim the weapon
+    /// </summary>
     private void Aim(AimDirection aimDirection, float aimAngle)
     {
         // Set angle of the weapon transform
@@ -62,7 +66,8 @@ public class AimWeapon : MonoBehaviour
 
     }
 
-      #region Validation
+
+    #region Validation
 #if UNITY_EDITOR
     private void OnValidate()
     {
@@ -70,6 +75,5 @@ public class AimWeapon : MonoBehaviour
     }
 #endif
     #endregion
-
 
 }
