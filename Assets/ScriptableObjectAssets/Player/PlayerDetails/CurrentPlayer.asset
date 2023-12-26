@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e10263f3daca205429a448fb1236cdcf, type: 3}
   m_Name: CurrentPlayer
   m_EditorClassIdentifier: 
-  playerDetails: {fileID: 11400000, guid: 49f4d94b8bc08db42b564667f5d40218, type: 2}
+  playerDetails: {fileID: 11400000, guid: 8162539e907ab314baacaa00e527f408, type: 2}
   playerName: Kentang

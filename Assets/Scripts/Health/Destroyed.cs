@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 [RequireComponent(typeof(DestroyedEvent))]
 [DisallowMultipleComponent]
 public class Destroyed : MonoBehaviour
 {
     private DestroyedEvent destroyedEvent;
+    public bool isDead = true;
 
     private void Awake()
     {
@@ -32,6 +33,11 @@ public class Destroyed : MonoBehaviour
         if (destroyedEventArgs.playerDied)
         {
             gameObject.SetActive(false);
+            if (isDead == true)
+            {
+                SceneManager.LoadScene("MainMenuScene");
+                Debug.Log("Mati");
+            }
         }
         else
         {
