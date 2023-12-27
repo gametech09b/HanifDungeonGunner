@@ -345,6 +345,8 @@ public class PlayerControl : MonoBehaviour
     {
         Weapon currentWeapon = player.activeWeapon.GetCurrentWeapon();
 
+
+
         // if current weapon is reloading return
         if (currentWeapon.isWeaponReloading) return;
 

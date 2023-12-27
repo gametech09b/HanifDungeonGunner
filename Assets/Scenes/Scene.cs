@@ -11,22 +11,25 @@ public class Scene : MonoBehaviour
         // MusicManager.Instance.PlayMusic(GameResources.Instance.mainMenuMusic, 0f, 2f);
 
     }
-    public void ChangeScene()
+    public void ChangeScene(string sceneName)
     {
-        SceneManager.LoadScene("TamanRuh");
+        SceneManager.LoadScene(sceneName);
     }
 
     public void OpenAndClose()
     {
-        if (active == false)
+        if (active != null)
         {
-            next.SetActive(true);
-            active = true;
-        }
-        else
-        {
-            next.SetActive(false);
-            active = false;
+            if (active == false)
+            {
+                next.SetActive(true);
+                active = true;
+            }
+            else
+            {
+                next.SetActive(false);
+                active = false;
+            }
         }
     }
 

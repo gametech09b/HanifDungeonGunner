@@ -35,7 +35,9 @@ public class Destroyed : MonoBehaviour
             gameObject.SetActive(false);
             if (isDead == true)
             {
-                SceneManager.LoadScene("MainMenuScene");
+                //SceneManager.LoadScene("MainMenuScene");
+                SceneManager.LoadScene("GameOverScene", LoadSceneMode.Additive);
+
                 Debug.Log("Mati");
             }
         }

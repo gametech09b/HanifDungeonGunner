@@ -196,8 +196,35 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7452092265214714703, guid: 07626fcdb44819245851b34ee3d8c4b0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452092265214714703, guid: 07626fcdb44819245851b34ee3d8c4b0, type: 3}
       propertyPath: movementDetails
       value: 
       objectReference: {fileID: 11400000, guid: 167bc016506fc574a87c97d32a102ad3, type: 2}
+    - target: {fileID: 8828117273109460899, guid: 07626fcdb44819245851b34ee3d8c4b0, type: 3}
+      propertyPath: isDead
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07626fcdb44819245851b34ee3d8c4b0, type: 3}
+--- !u!1 &2257384267364647984 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4886237443457582251, guid: 07626fcdb44819245851b34ee3d8c4b0, type: 3}
+  m_PrefabInstance: {fileID: 6673402360424022171}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2072278827139720768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2257384267364647984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc4f3b915ed966048b8eb9a08b5fcddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementDetails: {fileID: 11400000, guid: 167bc016506fc574a87c97d32a102ad3, type: 2}
+  isPlayerRolling: 0
